@@ -209,8 +209,10 @@
   </div>
 
   <div class="section" id="roblox">
-    <h2>Roblox Development</h2>
-    <div class="carousel-container">
+  <h2>Roblox Development</h2>
+  <div style="position: relative;">
+    <button onclick="scrollCarousel('robloxCarousel', -1)" style="position: absolute; left: -30px; top: 50%; transform: translateY(-50%); z-index: 1;">◀</button>
+    <div class="carousel-container" id="robloxCarousel">
       <div class="card">
         <h3>🔥 Survive the Ring of Fire</h3>
         <p>Survival game with shrinking fire zone, random events, and win tracking.</p>
@@ -227,7 +229,9 @@
         <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
       </div>
     </div>
+    <button onclick="scrollCarousel('robloxCarousel', 1)" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); z-index: 1;">▶</button>
   </div>
+</div>
 
   <div class="section" id="discord">
     <h2>Discord Bot Projects</h2>
@@ -258,5 +262,12 @@
   <footer>
     &copy; 2025 romr3l. All rights reserved.
   </footer>
+  <script>
+  function scrollCarousel(id, direction) {
+    const container = document.getElementById(id);
+    const scrollAmount = 320; // roughly one card
+    container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
