@@ -3,123 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>romr3l | Roblox Scripting Portfolio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <title>romr3l Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #0d0d0d;
-      color: #fff;
-      line-height: 1.6;
+      background-color: #0f0f0f;
+      color: white;
     }
-    header, section, footer {
+    header {
+      text-align: center;
       padding: 3rem 1rem;
-      max-width: 900px;
-      margin: auto;
     }
-    h1, h2, h3 {
-      font-weight: 700;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    h2 { font-size: 2rem; margin-top: 2rem; }
-    .contact {
-      background-color: #1a1a1a;
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
       padding: 1rem;
-      border-radius: 10px;
-      margin-top: 1rem;
     }
-    .project-list {
+    .section h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #555;
+      padding-bottom: 0.5rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #00ffb3;
+    }
+    .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
     }
-    .project {
-      background-color: #1a1a1a;
-      padding: 1rem;
-      border-radius: 8px;
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.1rem;
     }
-    .testimonial {
-      background-color: #1a1a1a;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 4px solid #00ffaa;
+    a {
+      color: #00ffd5;
+      text-decoration: none;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>romr3l</h1>
-    <p>Roblox Developer | Discord Bot Scripter</p>
-    <div class="contact">
-      <p><strong>Discord:</strong> romr3l</p>
-      <p><strong>Email:</strong> romr3lr@gmail.com</p>
-      <p><strong>Roblox:</strong> romr3</p>
-    </div>
+    <h1>romr3l's Developer Portfolio</h1>
+    <p>Roblox Scripter | Discord Bot Dev | Systems Integrator</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Hello! I go by rom on Roblox. I'm an intermediate-level scripter continually expanding my skills each day. I'm currently an Engineering student with experience in Python, Java, JavaScript, and Lua. I specialize in system integration, Discord bot development, and Roblox scripting.</p>
-  </section>
+  <div class="section">
+    <h2>Contact Info</h2>
+    <div class="contact">
+      <div><strong>Discord:</strong> romr3l</div>
+      <div><strong>Email:</strong> romr3lr@gmail.com</div>
+      <div><strong>Roblox:</strong> romr3</div>
+    </div>
+  </div>
 
-  <section>
+  <div class="section">
+    <h2>About Me</h2>
+    <p>Hello! I'm romr3l, an intermediate-level scripter focused on Roblox systems, backend logic, and bot automation. I'm currently studying engineering and always expanding my development stack.</p>
+  </div>
+
+  <div class="section">
     <h2>Programming Languages</h2>
     <ul>
       <li>Lua</li>
-      <li>Java</li>
       <li>JavaScript</li>
-      <li>Python (Some)</li>
+      <li>Java</li>
+      <li>Python (basic)</li>
     </ul>
-  </section>
+  </div>
 
-  <section>
-    <h2>Roblox Projects</h2>
-    <div class="project-list">
-      <div class="project">
-        <h3>Ring of Fire</h3>
-        <p>A shrinking arena battle royale with randomized hazards and dynamic win tracking.</p>
+  <div class="section">
+    <h2>Roblox Development</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🔥 Survive the Ring of Fire</h3>
+        <p>Survival game with shrinking fire zone, random events, and win tracking.</p>
       </div>
-      <div class="project">
-        <h3>Flawn Salon</h3>
-        <p>Salon roleplay game with appointment system, service tracker, and Hyra integration.</p>
+      <div class="card">
+        <h3>🌿 Flawn Salon</h3>
+        <p>Salon experience with appointment booking, Hyra integration, and roleplay tools.</p>
+      </div>
+      <div class="card">
+        <h3>🧰 Custom Admin Logger</h3>
+        <p>Logs admin actions to Trello/Hyra APIs with permission filtering and UI controls.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section>
+  <div class="section">
     <h2>Discord Bot Projects</h2>
-    <div class="project-list">
-      <div class="project">
-        <h3>Ticket System Bot</h3>
-        <p>Custom bot replicating Ticket Tool functionality for Roblox support, using webhooks and threads.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>🔔 Ticket Tool Clone</h3>
+        <p>Custom ticket system with threads, reactions, and category-based roles.</p>
       </div>
-      <div class="project">
-        <h3>Hyra Logger</h3>
-        <p>Automates admin and staff activity logs using Hyra API with event tracking from Roblox commands.</p>
+      <div class="card">
+        <h3>⏰ Activity Tracker</h3>
+        <p>Logs Roblox game time to Firebase, viewable through bot slash command.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section>
+  <div class="section">
     <h2>Testimonials</h2>
-    <div class="testimonial">
-      <p>"romr3l was super fast and implemented everything we asked for. Great communication, would hire again!"</p>
-      <strong>- Flawn Owner</strong>
+    <div class="card">
+      <p>"romr3l is a fast and reliable scripter who helped overhaul our salon systems. Highly recommended!" – Client A</p>
     </div>
-    <div class="testimonial">
-      <p>"One of the most organized and reliable scripters we've worked with. Everything was documented well and delivered clean."</p>
-      <strong>- Community Manager</strong>
+    <div class="card">
+      <p>"Custom admin logger was exactly what we needed. Organized, detailed, and functional." – Client B</p>
     </div>
-  </section>
+  </div>
 
   <footer>
-    <p style="text-align:center; color:#777">© 2025 romr3l. Built with 💻 and 🔥</p>
+    &copy; 2025 romr3l. All rights reserved.
   </footer>
 </body>
 </html>
+
