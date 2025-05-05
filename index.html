@@ -35,8 +35,6 @@
     nav a:hover {
       color: #ffffff;
     }
-
-    /* Hero section */
     .hero {
       height: 100vh;
       display: flex;
@@ -46,11 +44,9 @@
       text-align: center;
       padding: 0 1rem;
     }
-
     .hero-content {
       max-width: 700px;
     }
-
     .hero h1 {
       font-size: 4rem;
       background: linear-gradient(to right, #00ffd5, #00ffb3);
@@ -58,13 +54,11 @@
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
     }
-
     .hero p {
       font-size: 1.3rem;
       color: #ccc;
       margin-bottom: 2rem;
     }
-
     .hero-btn {
       background-color: #00ffd5;
       color: #000;
@@ -74,11 +68,9 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-
     .hero-btn:hover {
       background-color: #00c2a1;
     }
-
     .section {
       max-width: 1000px;
       margin: 2rem auto;
@@ -89,21 +81,56 @@
       border-bottom: 2px solid #555;
       padding-bottom: 0.5rem;
     }
+    .scroll-wrapper {
+      position: relative;
+    }
+    .scroll-grid {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 1rem 0;
+      scroll-behavior: smooth;
+    }
+    .scroll-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-grid::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 5px;
+    }
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1a1a1a;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .scroll-btn.left {
+      left: -2rem;
+    }
+    .scroll-btn.right {
+      right: -2rem;
+    }
     .card {
       background: #1a1a1a;
       border-radius: 10px;
       padding: 1rem;
-      margin-bottom: 1rem;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      min-width: 280px;
     }
     .card h3 {
       margin-top: 0;
       color: #00ffb3;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+    .thumb {
+      width: 100%;
+      margin-top: 0.5rem;
+      border-radius: 6px;
     }
     .contact {
       display: flex;
@@ -127,8 +154,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
   <nav>
     <a href="#about">About</a>
     <a href="#roblox">Roblox Projects</a>
@@ -136,8 +161,6 @@
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>romr3l</h1>
@@ -145,7 +168,6 @@
       <a href="#roblox" class="hero-btn">View My Work</a>
     </div>
   </section>
-
   <div class="section" id="contact">
     <h2>Contact Info</h2>
     <div class="contact">
@@ -154,12 +176,10 @@
       <div><strong>Roblox:</strong> romr3l</div>
     </div>
   </div>
-
   <div class="section" id="about">
     <h2>About Me</h2>
     <p>Hello! I'm romr3l, an intermediate-level scripter focused on Roblox systems, backend logic, and bot automation. I'm currently studying engineering and always expanding my development stack.</p>
   </div>
-
   <div class="section">
     <h2>Programming Languages</h2>
     <ul>
@@ -169,39 +189,47 @@
       <li>Python (basic)</li>
     </ul>
   </div>
-
   <div class="section" id="roblox">
     <h2>Roblox Development</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>🔥 Survive the Ring of Fire</h3>
-        <p>Survival game with shrinking fire zone, random events, and win tracking.</p>
+    <div class="scroll-wrapper">
+      <button class="scroll-btn left" onclick="scrollLeft('roblox-scroll')">←</button>
+      <div class="scroll-grid" id="roblox-scroll">
+        <div class="card">
+          <h3>🔥 Survive the Ring of Fire</h3>
+          <p>Survival game with shrinking fire zone, random events, and win tracking.</p>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img class="thumb" src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Survive the Ring of Fire video" />
+          </a>
+        </div>
+        <div class="card">
+          <h3>🌿 Flawn Salon</h3>
+          <p>Salon experience with appointment booking, Hyra integration, and roleplay tools.</p>
+        </div>
+        <div class="card">
+          <h3>🧰 Custom Admin Logger</h3>
+          <p>Logs admin actions to Trello/Hyra APIs with permission filtering and UI controls.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>🌿 Flawn Salon</h3>
-        <p>Salon experience with appointment booking, Hyra integration, and roleplay tools.</p>
-      </div>
-      <div class="card">
-        <h3>🧰 Custom Admin Logger</h3>
-        <p>Logs admin actions to Trello/Hyra APIs with permission filtering and UI controls.</p>
-      </div>
+      <button class="scroll-btn right" onclick="scrollRight('roblox-scroll')">→</button>
     </div>
   </div>
-
   <div class="section" id="discord">
     <h2>Discord Bot Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>🔔 Ticket Tool Clone</h3>
-        <p>Custom ticket system with threads, reactions, and category-based roles.</p>
+    <div class="scroll-wrapper">
+      <button class="scroll-btn left" onclick="scrollLeft('discord-scroll')">←</button>
+      <div class="scroll-grid" id="discord-scroll">
+        <div class="card">
+          <h3>🔔 Ticket Tool Clone</h3>
+          <p>Custom ticket system with threads, reactions, and category-based roles.</p>
+        </div>
+        <div class="card">
+          <h3>⏰ Activity Tracker</h3>
+          <p>Logs Roblox game time to Firebase, viewable through bot slash command.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>⏰ Activity Tracker</h3>
-        <p>Logs Roblox game time to Firebase, viewable through bot slash command.</p>
-      </div>
+      <button class="scroll-btn right" onclick="scrollRight('discord-scroll')">→</button>
     </div>
   </div>
-
   <div class="section" id="testimonials">
     <h2>Testimonials</h2>
     <div class="card">
@@ -211,10 +239,16 @@
       <p>"Custom admin logger was exactly what we needed. Organized, detailed, and functional." – Client B</p>
     </div>
   </div>
-
   <footer>
     &copy; 2025 romr3l. All rights reserved.
   </footer>
-
+  <script>
+    function scrollLeft(id) {
+      document.getElementById(id).scrollBy({ left: -300, behavior: 'smooth' });
+    }
+    function scrollRight(id) {
+      document.getElementById(id).scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
