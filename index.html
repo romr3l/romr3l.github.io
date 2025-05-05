@@ -15,24 +15,36 @@
       background-color: #0f0f0f;
       color: white;
     }
+
     nav {
       position: sticky;
       top: 0;
       background-color: #0f0f0f;
       border-bottom: 1px solid #222;
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
       z-index: 1000;
     }
-    nav a {
+
+    .nav-logo img {
+      height: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
       color: #00ffd5;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.2s;
     }
-    nav a:hover {
+
+    .nav-links a:hover {
       color: #ffffff;
     }
 
@@ -113,6 +125,7 @@
       margin: 2rem auto;
       padding: 1rem;
     }
+
     .section h2 {
       font-size: 2rem;
       border-bottom: 2px solid #555;
@@ -166,21 +179,22 @@
   </style>
 </head>
 <body>
- <nav>
-  <div style="position: absolute; left: 1rem;">
-    <img src="featherlogo.png" alt="Feather Logo" style="height: 32px; vertical-align: middle;" />
-  </div>
-  <a href="#about">About</a>
-  <a href="#roblox">Roblox Projects</a>
-  <a href="#discord">Discord Bots</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#contact">Contact</a>
-</nav>
-
+  <nav>
+    <div class="nav-logo">
+      <img src="featherlogo.png" alt="Feather Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#roblox">Roblox Projects</a>
+      <a href="#discord">Discord Bots</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
   <section class="hero">
     <div class="hero-content">
-      <img src="avatar.webp" alt="Avatar" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 1rem;" />
+      <img src="avatar.webp" alt="Avatar" />
       <h1>romr3l</h1>
       <div class="badge">Available for Commissions</div>
       <p>Engineering student. Roblox scripter. Discord bot developer.</p>
@@ -213,29 +227,29 @@
   </div>
 
   <div class="section" id="roblox">
-  <h2>Roblox Development</h2>
-  <div style="position: relative;">
-    <button onclick="scrollCarousel('robloxCarousel', -1)" style="position: absolute; left: -30px; top: 50%; transform: translateY(-50%); z-index: 1;">◀</button>
-    <div class="carousel-container" id="robloxCarousel">
-      <div class="card">
-        <h3>🔥 Survive the Ring of Fire</h3>
-        <p>Survival game with shrinking fire zone, random events, and win tracking.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+    <h2>Roblox Development</h2>
+    <div style="position: relative;">
+      <button onclick="scrollCarousel('robloxCarousel', -1)" style="position: absolute; left: -30px; top: 50%; transform: translateY(-50%); z-index: 1;">◀</button>
+      <div class="carousel-container" id="robloxCarousel">
+        <div class="card">
+          <h3>🔥 Survive the Ring of Fire</h3>
+          <p>Survival game with shrinking fire zone, random events, and win tracking.</p>
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <h3>🌿 Flawn Salon</h3>
+          <p>Salon experience with appointment booking, Hyra integration, and roleplay tools.</p>
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <h3>🧰 Custom Admin Logger</h3>
+          <p>Logs admin actions to Trello/Hyra APIs with permission filtering and UI controls.</p>
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+        </div>
       </div>
-      <div class="card">
-        <h3>🌿 Flawn Salon</h3>
-        <p>Salon experience with appointment booking, Hyra integration, and roleplay tools.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-      </div>
-      <div class="card">
-        <h3>🧰 Custom Admin Logger</h3>
-        <p>Logs admin actions to Trello/Hyra APIs with permission filtering and UI controls.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
-      </div>
+      <button onclick="scrollCarousel('robloxCarousel', 1)" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); z-index: 1;">▶</button>
     </div>
-    <button onclick="scrollCarousel('robloxCarousel', 1)" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); z-index: 1;">▶</button>
   </div>
-</div>
 
   <div class="section" id="discord">
     <h2>Discord Bot Projects</h2>
@@ -266,12 +280,13 @@
   <footer>
     &copy; 2025 romr3l. All rights reserved.
   </footer>
+
   <script>
-  function scrollCarousel(id, direction) {
-    const container = document.getElementById(id);
-    const scrollAmount = 320; // roughly one card
-    container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
-  }
-</script>
+    function scrollCarousel(id, direction) {
+      const container = document.getElementById(id);
+      const scrollAmount = 320;
+      container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
